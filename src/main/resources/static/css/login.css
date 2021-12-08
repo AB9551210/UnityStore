@@ -9,3 +9,149 @@
 	color: #666666;
 	padding: 8px;
 }
+
+/*注册页半透明框的样式*/
+*{
+	padding-left: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.regDiv{
+	height: 280px;
+	width: 500px;
+	background-color: rgba(255,255,255,0.85);
+	float: right;
+	margin: 130px 60px 0 0;
+	border-radius: 10px;
+	color: #666666;
+	padding: 8px;
+}
+
+#main_header{
+	width: 100%;
+	max-width: 1160px;
+	padding: 10px 17px 0 230px;
+}
+
+#main_header img{
+	width: 101px;
+	height: 30px;
+	display: block;
+}
+
+#content-wrapper{
+	background-color: rgb(245 248 249);
+	margin-top: 15px;
+	height: 330px;
+	padding: 60px 0 100px 200px;
+}
+
+#content{
+	width: 100%;
+	max-width: 1280px;
+	margin: auto;
+	text-align: left;
+}
+
+#mb1{
+	color: #222c37;
+	font-weight: 300;
+	font-size: 1.75em;
+}
+
+#mb2{
+	font-size: 1.0625em;
+}
+
+.form-group{
+	width: 1200px;
+	max-width: 1280px;
+	margin: auto;
+	text-align: left;
+	float: left;
+	padding: 15px 0;
+	
+}
+
+.col-md-8{
+	padding-top: 20px;
+	padding-right: 50px;
+}
+
+.form-group input{
+	width: 100%;
+	display: block;
+	line-height: 20px;
+	height: 46px;
+	border: #d6dadc 1px solid;
+	font-size: 1em;
+	color: #5a5a5b;
+	font-weight: 300;
+	outline-width: 0;
+	outline: none;
+	resize: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#btn-reg{
+	width: 120px;
+	background-color: #8ac249;
+	margin-right: 15px !important;
+	margin-bottom: 5px;
+	line-height: 20px;
+	display: block;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	padding: 13px 20px;
+	font-size: 0.9375em;
+	font-weight: 400;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	margin: 0;
+	border: 0;
+	outline: 0;
+	border-image-width: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: white;
+}
+
+#btn-log{
+	line-height: 20px;
+	display: block;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	padding: 13px 20px;
+	font-size: 0.9375em;
+	font-weight: 400;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	margin: 0;
+	border: 0;
+	outline: 0;
+	border-image-width: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-color: #9e9e9e;
+	color: #9e9e9e;
+}
+
+#bottom-img{
+	position: relative;
+	
+}
+
+#bottom-img img{
+	position: absolute;
+	left: 300px;
+	
+}

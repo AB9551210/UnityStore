@@ -1,8 +1,10 @@
 package com.untiy.store.mapper;
 
 import com.untiy.store.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
 //用户模块的持久层接口
+@Mapper
 public interface UserMapper {
     /**
      * 插入用户的数据
@@ -12,9 +14,9 @@ public interface UserMapper {
     Integer insert(User user);
 
     /**
-     * 根据用户名来查询用户的数据
+     * 根据用户名查询用户数据
      * @param username 用户名
-     * @return 如果找到对应的用户则返回用户的数据，否则返回null
+     * @return 匹配的用户数据，如果没有匹配的数据，则返回null
      */
     User findByUsername(String username);
 }
