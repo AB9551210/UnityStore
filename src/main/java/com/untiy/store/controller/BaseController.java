@@ -33,10 +33,28 @@ public class BaseController {
     @ExceptionHandler(ServiceException.class)
     public JsonResult<Void> handleException(Throwable e) {
         JsonResult<Void> result = new JsonResult<Void>(e);
-        if (e instanceof InsertException) {
-            result.setState(5000);
-        }else if (e instanceof UsernameDuplicateException) {
+        if (e instanceof UsernameDuplicateException) {
             result.setState(4000);
+        } else if (e instanceof UserNotFoundException) {
+            result.setState(4001);
+        } else if (e instanceof PasswordNotMatchException) {
+            result.setState(4002);
+        } else if (e instanceof AddressCountLimitException) {
+            result.setState(4003);
+        } else if (e instanceof AddressNotFoundException) {
+            result.setState(4004);
+        } else if (e instanceof AccessDeniedException) {
+            result.setState(4005);
+        } else if (e instanceof ProductNotFoundException) {
+            result.setState(4006);
+        } else if (e instanceof CartNotFoundException) {
+            result.setState(4007);
+        } else if (e instanceof InsertException) {
+            result.setState(5000);
+        } else if (e instanceof UpdateException) {
+            result.setState(5001);
+        } else if (e instanceof DeleteException) {
+            result.setState(5002);
         }
         return result;
     }
