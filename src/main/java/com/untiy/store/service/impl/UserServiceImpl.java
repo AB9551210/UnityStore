@@ -111,4 +111,128 @@ public class UserServiceImpl implements IUserService {
         // 返回新的user对象
         return user;
     }
+
+    @Override
+    public void changePassword(Integer uid, String username, String oldPassword, String newPassword) {
+        // 调用userMapper的findByUid()方法，根据参数uid查询用户数据
+        User result = userMapper.findByUid(uid);
+        // 检查查询结果是否为null
+        if (result == null) {
+            // 是：抛出UserNotFoundException异常
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 检查查询结果中的isDelete是否为1
+        if (result.getIsDelete().equals(1)) {
+            // 是：抛出UserNotFoundException异常
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 从查询结果中取出盐值
+        String salt = result.getSalt();
+        // 将参数oldPassword结合盐值加密，得到oldMd5Password
+        String oldMd5Password = getMd5Password(oldPassword, salt);
+        // 判断查询结果中的password与oldMd5Password是否不一致
+        if (!result.getPassword().contentEquals(oldMd5Password)) {
+            // 是：抛出PasswordNotMatchException异常
+            throw new PasswordNotMatchException("原密码错误");
+        }
+
+        // 将参数newPassword结合盐值加密，得到newMd5Password
+        String newMd5Password = getMd5Password(newPassword, salt);
+        // 创建当前时间对象
+        Date now = new Date();
+        // 调用userMapper的updatePasswordByUid()更新密码，并获取返回值
+        Integer rows = userMapper.updatePasswordByUid(uid, newMd5Password, username, now);
+        // 判断以上返回的受影响行数是否不为1
+        if (rows != 1) {
+            // 是：抛出UpdateException异常
+            throw new UpdateException("更新用户数据时出现未知错误，请联系系统管理员");
+        }
+    }
+
+    @Override
+    public User getByUid(Integer uid) {
+        // 调用userMapper的findByUid()方法，根据参数uid查询用户数据
+        User result = userMapper.findByUid(uid);
+        // 判断查询结果是否为null
+        if (result == null) {
+            // 是：抛出UserNotFoundException异常
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 判断查询结果中的isDelete是否为1
+        if (result.getIsDelete().equals(1)) {
+            // 是：抛出UserNotFoundException异常
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 创建新的User对象
+        User user = new User();
+        // 将以上查询结果中的username/phone/email/gender封装到新User对象中
+        user.setUsername(result.getUsername());
+        user.setPersonName(result.getPersonName());
+        user.setEmail(result.getEmail());
+
+        // 返回新的User对象
+        return user;
+    }
+
+    @Override
+    public void changeInfo(Integer uid, String username, User user) {
+        // 调用userMapper的findByUid()方法，根据参数uid查询用户数据
+        User result = userMapper.findByUid(uid);
+        // 判断查询结果是否为null
+        if (result == null) {
+            // 是：抛出UserNotFoundException异常
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 判断查询结果中的isDelete是否为1
+        if (result.getIsDelete().equals(1)) {
+            // 是：抛出UserNotFoundException异常
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 向参数user中补全数据：uid
+        user.setUid(uid);
+        // 向参数user中补全数据：modifiedUser(username)
+        user.setModifiedUser(username);
+        // 向参数user中补全数据：modifiedTime(new Date())
+        user.setModifiedTime(new Date());
+        // 调用userMapper的updateInfoByUid(User user)方法执行修改，并获取返回值
+        Integer rows = userMapper.updateInfoByUid(user);
+        // 判断以上返回的受影响行数是否不为1
+        if (rows != 1) {
+            // 是：抛出UpdateException异常
+            throw new UpdateException("更新用户数据时出现未知错误，请联系系统管理员");
+        }
+    }
+
+    @Override
+    public void changeAvatar(Integer uid, String username, String avatar) {
+        // 调用userMapper的findByUid()方法，根据参数uid查询用户数据
+        User result = userMapper.findByUid(uid);
+        // 检查查询结果是否为null
+        if (result == null) {
+            // 是：抛出UserNotFoundException
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 检查查询结果中的isDelete是否为1
+        if (result.getIsDelete().equals(1)) {
+            // 是：抛出UserNotFoundException
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 创建当前时间对象
+        Date now = new Date();
+        // 调用userMapper的updateAvatarByUid()方法执行更新，并获取返回值
+        Integer rows = userMapper.updateAvatarByUid(uid, avatar, username, now);
+        // 判断以上返回的受影响行数是否不为1
+        if (rows != 1) {
+            // 是：抛出UpdateException
+            throw new UpdateException("更新用户数据时出现未知错误，请联系系统管理员");
+        }
+    }
 }

@@ -2,7 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+		<script type="text/javascript" src="../bootstrap3/jquery-3.6.0.js"></script>
+		<script src="../bootstrap3/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/reg.css"/>
 		<title>Untiy ID - 登录Untiy ID</title>
 	</head>
 	<body>
@@ -44,7 +46,6 @@
 			<img src="../images/index/bottompng.png" width="1000px">
 		</div>
 	</body>
-	<script type="text/javascript" src="/bootstrap3/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
 		$("#btn-reg").click(function() {
 			$.ajax({
@@ -55,8 +56,8 @@
 				success: function(json) {
 					if (json.state == 200) {
 						alert("登录成功！");
-						//$.cookie("avatar", json.data.avatar, {expires: 7});
-						//console.log("cookie中的avatar=" + $.cookie("avatar"));
+						$.cookie("avatar", json.data.avatar, {expires: 7});
+						console.log("cookie中的avatar=" + $.cookie("avatar"));
 						location.href = "index.html";
 					} else {
 						alert("登录失败！" + json.message);

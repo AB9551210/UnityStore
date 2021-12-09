@@ -142,3 +142,36 @@
 	left: 300px;
 	
 }
+
+.content-a-upload {
+    position: relative;
+	margin-top: 10px;
+	margin-left: 110px;
+    padding:  4px 3px;
+    height: 30px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
+    color: #888;
+    background: #ffe5f3;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+}
+.content-a-upload input {
+    position: absolute;
+    font-size: 100px;
+    height: 77px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.content-a-upload:hover {
+    color: #444;
+    background: #ffffff;
+    border-color: #ccc;
+    text-decoration: none
+}
