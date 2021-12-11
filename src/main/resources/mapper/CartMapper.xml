@@ -3,7 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.untiy.store.mapper.ProductMapper">
-
     <resultMap id="CartEntityMap" type="com.untiy.store.entity.Cart">
         <id column="cid" property="cid"/>
         <result column="created_user" property="createdUser"/>
@@ -11,17 +10,11 @@
         <result column="modified_user" property="modifiedUser"/>
         <result column="modified_time" property="modifiedTime"/>
     </resultMap>
-
     <!-- 插入购物车数据：Integer insert(Cart cart) -->
     <insert id="insert" useGeneratedKeys="true" keyProperty="cid">
         INSERT INTO t_cart (uid, pid, price, created_user, created_time, modified_user, modified_time)
         VALUES (#{uid}, #{pid}, #{price}, #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
     </insert>
-
-    <!-- 根据用户id和商品id查询购物车中的数据：
-         Cart findByUidAndPid(
-            @Param("uid") Integer uid,
-            @Param("pid") Integer pid) -->
     <select id="findByUidAndPid" resultMap="CartEntityMap">
         SELECT
             *
@@ -30,9 +23,8 @@
         WHERE
             uid=#{uid} AND pid=#{pid}
     </select>
-
     <!-- 查询某用户的购物车数据：List<CartVO> findVOByUid(Integer uid) -->
-    <select id="findVOByUid" resultType="com.cy.store.vo.CartVO">
+    <select id="findVOByUid" resultType="com.untiy.store.vo.CartVO">
         SELECT
             cid,
             uid,
@@ -48,7 +40,6 @@
         ORDER BY
             t_cart.created_time DESC
     </select>
-
     <!-- 根据购物车数据id查询购物车数据详情：Cart findByCid(Integer cid) -->
     <select id="findByCid" resultMap="CartEntityMap">
         SELECT
@@ -58,9 +49,8 @@
         WHERE
             cid = #{cid}
     </select>
-
     <!-- 根据若干个购物车数据id查询详情的列表：List<CartVO> findVOByCids(Integer[] cids) -->
-    <select id="findVOByCids" resultType="com.cy.store.vo.CartVO">
+    <select id="findVOByCids" resultType="com.untiy.store.vo.CartVO">
         SELECT
             cid,
             uid,

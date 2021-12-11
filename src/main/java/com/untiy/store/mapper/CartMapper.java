@@ -3,9 +3,7 @@ package com.untiy.store.mapper;
 import com.untiy.store.entity.Cart;
 import com.untiy.store.vo.CartVO;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
-import java.util.Date;
 import java.util.List;
 
 /** 处理购物车数据的持久层接口 */
@@ -24,9 +22,7 @@ public interface CartMapper {
      * @param pid 商品id
      * @return 匹配的购物车数据，如果该用户的购物车中并没有该商品，则返回null
      */
-    Cart findByUidAndPid(
-            @Param("uid") Integer uid,
-            @Param("pid") Integer pid);
+    Cart findByUidAndPid(Integer uid,Integer pid);
 
     /**
      * 查询某用户的购物车数据

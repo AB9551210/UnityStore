@@ -110,7 +110,7 @@
 					<li>Get Unity</li>
 					<li>Download Archive</li>
 					<li>Beta Program</li>
-				</ul>		
+				</ul>
 				<hr style="background-color: #494A4B;border:none;height:2px;">								
 			</div>
 			<div id="infoCopy">
@@ -123,41 +123,13 @@
 	<script src="../js/jquery-3.6.0.js"></script>
 	<script type="text/javascript" src="../js/jquery-getUrlParam.js"></script>
 	<script type="text/javascript">
+	
 		let id = $.getUrlParam("id");
+		
 		console.log("id=" + id);
-		$(document).ready(function() {
-			$.ajax({
-				url: "/products/" + id + "/details",
-				type: "GET",
-				dataType: "JSON",
-				success: function(json) {
-					if (json.state == 200) {
-						let list = json.data;
-						let html =   '<div id="imgshow"><img src="..#{image}collect.jpg"></div>'
-									+  '<div id="">'
-									+  '<div id="nameshow"><h3 style="margin-top: 0px;">#{title}</h3></div>'
-									+  '<div id="priceshow">￥#{afterprice}</div>'
-									+  '<img src="../images/index/proshow.jpg" style="width: 300px;padding-top:20px;padding-left:40px;">'
-									+  '<div id="" class="btn-gradient red block " style="width: 260px;margin-left:40px;">立即购买</div>'
-									+  '<div id="btn-add-to-cart" class="btn-gradient green block" style="width: 260px;margin-left:40px;">加入购物车</div>'
-									+'</div>'
-													
-						html = html.replace(/#{title}/g, list.title);
-						html = html.replace(/#{image}/g, list.image);
-						html = html.replace(/#{afterprice}/g, list.afterprice);
-									
-						$("#container").append(html);						
-
-					} else if (json.state == 4006) { // 商品数据不存在的异常
-						location.href = "index.html";
-					} else {
-						alert("获取商品信息失败！" + json.message);
-					}
-				}
-			});
-		});
-
-		$("#btn-add-to-cart").click(function() {
+		
+		$("body").on("click", "#btn-add-to-cart", function() {
+			console.log("123124");
 			$.ajax({
 				url: "/carts/add_to_cart",
 				type: "POST",
@@ -175,6 +147,62 @@
 				error: function(xhr) {
 					alert("您的登录信息已经过期，请重新登录！HTTP响应码：" + xhr.status);
 					location.href = "login.html";
+				}
+			});
+		});
+		
+		
+		/*$("#btn-add-to-cart").click(function() {
+			console.log("123124");
+			$.ajax({
+				url: "/carts/add_to_cart",
+				type: "POST",
+				data: {
+					"pid": id,
+				},
+				dataType: "JSON",
+				success: function(json) {
+					if (json.state == 200) {
+						alert("增加成功！");
+					} else {
+						alert("增加失败！" + json.message);
+					}
+				},
+				error: function(xhr) {
+					alert("您的登录信息已经过期，请重新登录！HTTP响应码：" + xhr.status);
+					location.href = "login.html";
+				}
+			});
+		});*/
+		
+		$(document).ready(function() {
+			$.ajax({
+				url: "/products/" + id + "/details",
+				type: "GET",
+				dataType: "JSON",
+				success: function(json) {
+					if (json.state == 200) {
+						let list = json.data;
+						let html =   '<div id="imgshow"><img src="..#{image}collect.jpg"></div>'
+									+  '<div id="">'
+									+  '<div id="nameshow"><h3 style="margin-top: 0px;">#{title}</h3></div>'
+									+  '<div id="priceshow">￥#{afterprice}</div>'
+									+  '<img src="../images/index/proshow.jpg" style="width: 300px;padding-top:20px;padding-left:40px;">'
+									+  '<div id="" class="btn-gradient red block " style="width: 260px;margin-left:40px;">立即购买</div>'
+									+  '<div id="btn-add-to-cart" class="btn-gradient green block" style="width: 260px;margin-left:40px;">加入购物车</div>'
+									+'</div>'
+																						
+						html = html.replace(/#{title}/g, list.title);
+						html = html.replace(/#{image}/g, list.image);
+						html = html.replace(/#{afterprice}/g, list.afterprice);
+									
+						$("#container").append(html);						
+
+					} else if (json.state == 4006) { // 商品数据不存在的异常
+						location.href = "index.html";
+					} else {
+						alert("获取商品信息失败！" + json.message);
+					}
 				}
 			});
 		});

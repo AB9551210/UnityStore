@@ -5,8 +5,6 @@ import com.untiy.store.entity.Product;
 import com.untiy.store.mapper.CartMapper;
 import com.untiy.store.service.ICartService;
 import com.untiy.store.service.IProductService;
-import com.untiy.store.service.ex.AccessDeniedException;
-import com.untiy.store.service.ex.CartNotFoundException;
 import com.untiy.store.service.ex.InsertException;
 import com.untiy.store.vo.CartVO;
 import org.springframework.beans.factory.annotation.Autowired;
