@@ -48,4 +48,21 @@ public class CartController extends BaseController {
         // 返回成功与数据
         return new JsonResult<>(OK, data);
     }
+
+    @GetMapping("/deleteByCid")
+    public JsonResult<Void> deleteByCid(Integer cid) {
+        // 调用业务对象执行删除数据
+        System.out.println(cid);
+        cartService.deleteByCid(cid);
+        // 返回成功
+        return new JsonResult<>(OK);
+    }
+
+    @GetMapping("/deleteByCids")
+    public JsonResult<Void> deleteByCids(Integer[] cids) {
+        // 调用业务对象执行删除数据
+        cartService.deleteByCids(cids);
+        // 返回成功
+        return new JsonResult<>(OK);
+    }
 }

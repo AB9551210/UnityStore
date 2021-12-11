@@ -3,6 +3,7 @@ package com.untiy.store.mapper;
 import com.untiy.store.entity.Cart;
 import com.untiy.store.vo.CartVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,12 +18,28 @@ public interface CartMapper {
     Integer insert(Cart cart);
 
     /**
+     * 删除购物车数据
+     * @param cid 购物车id
+     * @return
+     */
+    Integer delete(Integer cid);
+
+    /**
+     * 删除购物车数据
+     * @param cids 购物车id列表
+     * @return
+     */
+    Integer deleteByAll(Integer [] cids);
+
+    /**
      * 根据用户id和商品id查询购物车中的数据
      * @param uid 用户id
      * @param pid 商品id
      * @return 匹配的购物车数据，如果该用户的购物车中并没有该商品，则返回null
      */
-    Cart findByUidAndPid(Integer uid,Integer pid);
+    Cart findByUidAndPid(
+            @Param("uid") Integer uid,
+            @Param("pid") Integer pid);
 
     /**
      * 查询某用户的购物车数据

@@ -5,6 +5,7 @@ import com.untiy.store.entity.Product;
 import com.untiy.store.mapper.CartMapper;
 import com.untiy.store.service.ICartService;
 import com.untiy.store.service.IProductService;
+import com.untiy.store.service.ex.DeleteException;
 import com.untiy.store.service.ex.InsertException;
 import com.untiy.store.vo.CartVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,22 @@ public class CartServiceImpl implements ICartService {
     private CartMapper cartMapper;
     @Autowired
     private IProductService productService;
+
+    @Override
+    public void deleteByCid(Integer cid) {
+        Integer rows = cartMapper.delete(cid);
+        if (rows != 1) {
+            throw new DeleteException("购物车删除商品错误");
+        }
+    }
+
+    @Override
+    public void deleteByCids(Integer[] cids) {
+        Integer rows = cartMapper.deleteByAll(cids);
+        if(rows == 0||rows == null){
+            throw new DeleteException("购物车删除商品错误");
+        }
+    }
 
     @Override
     public void addToCart(Integer uid, Integer pid, String username) {

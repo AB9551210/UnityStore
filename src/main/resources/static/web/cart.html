@@ -9,10 +9,11 @@
 		<link rel="stylesheet" href="../css/button.css">
 		<link rel="shortcut icon" href="../images/index/icon.ico" type="image/x-icon" /> 
 		<!--导入核心文件-->
+		<script src="../js/jquery-3.6.0.js"></script>
 		<script src="../bootstrap3/js/holder.js"></script>
 		<link href="../bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
-		<script src="../bootstrap3/jquery-1.9.1.min.js"></script>
 		<script src="../bootstrap3/js/bootstrap.js"></script>
+		<script src="../js/cart.js" type="text/javascript" charset="utf-8"></script>
 		<!-- 字体图标 -->
 		<link rel="stylesheet" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
 		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
@@ -26,27 +27,26 @@
 		<div id="nav">
 		<div id="navtop">
 			<div id="icon">
-				<img src="../images/index/upicon.svg" height="32px" width="200px">
+				<a href="index.html"><img src="../images/index/upicon.svg" height="32px" width="200px"></a>
 			</div>
-			<div id="jump">
-				<ul id="jump2">
-					<li>Asset</li>
-					<li>工具</li>
-					<li>服务</li>
-					<li>Untiy官方资源</li>
-					<li>行业</li>
+			<div id="jump" style="margin-top: 3px;">
+				<ul id="jump2" >
+					<li style="font-size: 15px;">Asset</li>
+					<li style="font-size: 15px;">工具</li>
+					<li style="font-size: 15px;">服务</li>
+					<li style="font-size: 15px;">Untiy官方资源</li>
+					<li style="font-size: 15px;">行业</li>
 				</ul>
 			</div>
 			<div id="user">
-				<img id="up1" style="width: 30px;" src="../images/index/up1.png">
-				<img id="up2" style="width: 30px;" src="../images/index/up2.png">
-				<img id="up3" style="width: 30px;" src="../images/index/up3.png">
+				<a href="cart.html"><img id="up1" style="width: 30px;" src="../images/index/up1.png"></a>
+				<a href="orders.html"><img id="up2" style="width: 30px;" src="../images/index/up2.png"></a>
+				<a href="userdata.html"><img id="up3" style="width: 30px;" src="../images/index/up3.png"></a>
 			</div>
 		</div>
 		<div id="navbottom">
 			<div id="ser">
-				<img src="../images/index/sousuo.svg">
-				<input type="text" name="se" id="se" value="       搜索资源"/>
+				<input type="text" name="se" id="se" value="搜索资源"/>
 			</div>
 		</div>
 		</div>
@@ -54,10 +54,10 @@
 			<div class="col-md-offset-1 col-md-10">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<p class="panel-title"><span class="fa fa-shopping-cart"></span> 购物车</p>
+						<p class="panel-title"><span class="fa fa-shopping-cart"></span> Untiy3D - 商品购物列表</p>
 					</div>
 					<div class="panel-body">
-						<form action="orderConfirm.html" role="form" >
+						<form id="form-reg" action="orderConfirm.html" role="form" >
 							<!--购物车表格开始-->
 							<table class="cart-table" width="100%">
 								<thead>
@@ -71,59 +71,13 @@
 									</tr>
 								</thead>
 								<tbody id="cart-list" class="cart-body">
-									<tr>
-										<td>
-											<input type="checkbox" class="ckitem" />
-										</td>
-										<td><img src="../images/portal/12DELLXPS13-silvery/collect.png" class="img-responsive" /></td>
-										<td>联想(Lenovo)小新Air13 Pro 13.3英寸14.8mm超轻薄笔记本电脑</td>
-										<td>¥<span id="goodsPrice1">5298</span></td>
-										<td>
-											<input type="button" onclick="delCartItem(this)" class="cart-del btn btn-default btn-xs" value="删除" />
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" class="ckitem" />
-										</td>
-										<td><img src="../images/portal/16LenovoYOGA900green/collect.png" class="img-responsive" /></td>
-										<td>戴尔(DELL)XPS13-9360-R1609 13.3</td>
-										<td>¥<span id="goodsPrice2">4988</span></td>
-										<td>
-											<input type="button" value="-" class="num-btn" onclick="reduceNum(2)" />
-											<input id="goodsCount2" type="text" size="2" readonly="readonly" class="num-text" value="1">
-											<input class="num-btn" type="button" value="+" onclick="addNum(2)" />
-										</td>
-										<td><span id="goodsCast2"></span></td>
-										<td>
-											<input type="button" onclick="delCartItem(this)" class="cart-del btn btn-default btn-xs" value="删除" />
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="checkbox" class="ckitem" />
-										</td>
-										<td><img src="../images/portal/13LenovoIdeaPad310_silvery/collect.png" class="img-responsive" /></td>
-										<td>戴尔(DELL)魔方15MF Pro-R2505TSS灵越</td>
-										<td>¥<span id="goodsPrice3">4699</span></td>
-										<td>
-											<input type="button" value="-" class="num-btn" onclick="reduceNum(3)" />
-											<input id="goodsCount3" type="text" size="2" readonly="readonly" class="num-text" value="1">
-											<input class="num-btn" type="button" value="+" onclick="addNum(3)" />
-										</td>
-										<td><span id="goodsCast3"></span></td>
-										<td>
-											<input type="button" onclick="delCartItem(this)" class="cart-del btn btn-default btn-xs" value="删除" />
-										</td>
-									</tr>
+									
 								</tbody>
 							</table>
-							<div class="total-bar">
-								<a href="javascript:selDelCart()" class="cart-del-sel btn btn-default btn-xs">删除所选商品</a>
-								<span class="pull-right">已选商品
-								<span id="selectCount">0</span>件 总价¥
-								<span id="selectTotal">0</span>元
-								</span>
+							<div class="total-bar" style="color: white;">
+								<span class="pull-right"></span>已选商品
+								<span id="selectCount">0&nbsp;</span>件  总价¥
+								<span id="selectTotal">0&nbsp;</span>元
 							</div>
 							<div>
 								<span class="pull-right">
@@ -212,10 +166,25 @@
 		</div>
 	</div>
 	</body>
-	<script src="../js/jquery-3.6.0.js"></script>
 	<script type="text/javascript">
+	
+		$("body").on("click", ".ckitem", function() {
+			calcTotal();
+		});
+	
 		$(document).ready(function() {
 			showCartList();
+		});
+
+		$('#form-reg').submit(function (e) {
+			//check atleat 1 checkbox is checked
+			if (!$('.ckitem').is(':checked')) {
+				alert("未选择商品");
+				e.preventDefault();
+			}
+			else{
+				$("#form-reg").submit();
+			}
 		});
 
 		function showCartList() {
@@ -231,14 +200,11 @@
 										+'<td>'
 											+'<input name="cids" value="#{cid}" type="checkbox" class="ckitem" />'
 										+'</td>'
-										+'</td>'
-											+'<input type="checkbox" class="ckitem" />'
-										+'</td>'
-											+'<td><img src="..#{image}collect.jpg" class="img-responsive" /></td>'
-											+'<td>#{title}</td>'
-											+'<td>¥<span id="price-#{cid}">#{realPrice}</span></td>'
+										+'<td><img src="..#{image}collect.jpg" class="img-responsive" /></td>'
+										+'<td>#{title}</td>'
+										+'<td>¥<span id="price-#{cid}">#{realPrice}</span></td>'
 										+'<td>'
-											+'<input type="button" onclick="delCartItem(this)" class="cart-del btn btn-default btn-xs" value="删除" />'
+											+'<input id="#{cid}" type="button" onclick="delCartItem(this.id,this)" class="cart-del btn btn-default btn-xs" value="删除" />'
 										+'</td>'
 									+'</tr>'
 								 

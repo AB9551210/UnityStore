@@ -1,120 +1,444 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
-		<meta charset="UTF-8">
-		<!--edge浏览器H5兼容设置-->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!--360浏览器H5兼容设置-->
-		<meta name="renderer" content="webkit" />
-		<title>电脑商城</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--导入核心文件-->
-		<script src="bootstrap3/js/holder.js"></script>
-		<link href="bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css">
-		<script src="bootstrap3/jquery-1.9.1.min.js"></script>
-		<script src="bootstrap3/js/bootstrap.js"></script>
-		<!-- 字体图标 -->
-		<link rel="stylesheet" href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
-		<link rel="stylesheet" type="text/css" href="css/top.css" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" type="text/css" href="css/layout.css" />
-		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<meta charset="utf-8" />
+		<title>Untiy 资源商店 - 优质3D 2D游戏制作资源平台</title>
+		<!-- <script src="https://unpkg.com/vue@next"></script> -->
+		<link rel="stylesheet" href="../css/default.css">
+		<link rel="shortcut icon" href="../images/index/icon.ico" type="image/x-icon" /> 
 	</head>
-
-	<body>
-		<!--头部-->
-		<header class="header">
-			<img src="images/index/stumalllogo.png" alt="" />
-			<span class="pull-right"><small>欢迎访问</small><b>电脑商城</b></span>
-		</header>
-		<!--主体-->
-		<div class="container mycontent">
-			<!--透明层 -->
-			<div class="inputDiv">
-				<p>请选择要浏览的页面</p>
-				<ul>
-					<li><a class="btn btn-sm btn-info" href="web/index.html">网站首页</a></li>
-					<li><a class="btn btn-sm btn-info" href="web/login.html">登录页面</a></li>
-					<li><a class="btn btn-sm btn-info" href="web/register.html">注册页面 </a></li>
-					<li><a class="btn btn-sm btn-info" href="web/404.html">404页面</a></li>
-					<li><a class="btn btn-sm btn-info" href="web/500.html">500页面 </a></li>
-					<li><a class="btn btn-sm btn-info" href="pages.zip">下载全部资料 </a></li>
+	<body style="margin:0">
+	<div id="over">
+		<div id="nav">
+		<div id="navtop">
+			<div id="icon">
+				<a href="index.html"><img src="../images/index/upicon.svg" height="32px" width="200px"></a>
+			</div>
+			<div id="jump">
+				<ul id="jump2">
+					<li>Asset</li>
+					<li>工具</li>
+					<li>服务</li>
+					<li>Untiy官方资源</li>
+					<li>行业</li>
 				</ul>
 			</div>
+			<div id="user">
+				<a href="cart.html"><img id="up1" src="../images/index/up1.png"></a>
+				<a href="orders.html"><img id="up2" src="../images/index/up2.png"></a>
+				<a href="userdata.html"><img id="up3" src="../images/index/up3.png"></a>
+			</div>
 		</div>
-		<!--页脚开始-->
-		<footer class="footer">
-			<!-- 品质保障，私人定制等-->
-			<div class="text-center rights container">
-				<div class="col-md-offset-2 col-md-2">
-					<span class="fa fa-thumbs-o-up"></span>
-					<p>品质保障</p>
+		<div id="navbottom">
+			<div id="ser">
+				<img src="../images/index/sousuo.svg">
+				<input type="text" name="se" id="se" value="       搜索资源"/>
+			</div>
+		</div>
+		</div>
+		<div id="partone">
+			<div id="partOneBox">
+				<div id="text1">
+					促销资源阵容扩大
 				</div>
-				<div class="col-md-2">
-					<span class="fa fa-address-card-o"></span>
-					<p>私人订制</p>
+				<div id="text2">
+					<em>黑色星期五促销活动</em>
 				</div>
-				<div class="col-md-2">
-					<span class="fa fa-graduation-cap"></span>
-					<p>学生特供</p>
+				<div id="text3">
+					<strong>5折优惠</strong>
 				</div>
-				<div class="col-md-2">
-					<span class="fa fa-bitcoin"></span>
-					<p>专属特权</p>
+				<div id="text4">
+					利用火热促销的 650+ 款资源提升项目品质。
+				</div>
+				<div id="text5">
+					<button type="button">立即购买 5 折资源</button>
+				</div>
+				<div id="soonBox">
+					<div id="soonText1">
+						闪促
+					</div>	
+					<div id="soonText2">
+						<div id="stc1">
+							稍纵即逝
+						</div>
+						<div id="stc2">
+							<p>利用优质畅销资源，实现下一个伟大创意。资源数量有，低至 1 折。请及时查看促销信息，不要错过下一次闪促哦！</p>
+						</div>
+						<div id="stc3">
+							<button type="button">查看详情</button>
+						</div>
+					</div>	
 				</div>
 			</div>
-			<!--联系我们、下载客户端等-->
-			<div class="container beforeBottom">
-				<div class="col-md-offset-1 col-md-3">
-					<div><img src="images/index/stumalllogo.png" alt="" class="footLogo" /></div>
-					<div><img src="images/index/footerFont.png" alt="" /></div>
+			<div id="partOneBox2">
+				<div id="pt1">
+					
 				</div>
-				<div class="col-md-4 callus text-center">
-					<div class="col-md-4">
-						<ul>
-							<li><a href="#"><p>买家帮助</p></a></li>
-							<li><a href="#">新手指南</a></li>
-							<li><a href="#">服务保障</a></li>
-							<li><a href="#">常见问题</a></li>
-						</ul>
-					</div>
-					<div class="col-md-4">
-						<ul>
-							<li><a href="#"><p>商家帮助</p></a></li>
-							<li><a href="#">商家入驻</a></li>
-							<li><a href="#">商家后台</a></li>
-						</ul>
-					</div>
-					<div class="col-md-4">
-						<ul>
-							<li><a href="#"><p>关于我们</p></a></li>
-							<li><a href="#">关于圆心</a></li>
-							<li><a href="#">联系我们</a></li>
-							<li>
-								<span class="fa fa-wechat"></span>
-								<span class="fa fa-weibo"></span>
-							</li>
-						</ul>
-					</div>
+				<div id="pt2">
+					
 				</div>
-				<div class="col-md-4">
-					<div class="col-md-5">
-						<p>电脑商城客户端</p>
-						<img src="images/index/ios.png" class="lf">
-						<img src="images/index/android.png" alt="" class="lf" />
+			</div>
+			<div id="partOneBox3">
+				<h2>热门资源</h2>
+				<div class="navBox3">
+					<ul>
+						<li title="#div1" style="color:#d038a9;border-bottom-style:solid">促销中</li>
+						<li title="#div2">热门资源</li>
+						<li title="#div3">最新热门资源</li>
+					</ul>
+					<hr />
+				</div>
+				<div class="content">
+					<div class="con" id="div1">
+						
 					</div>
-					<div class="col-md-6">
-						<img src="images/index/erweima.jpg">
+					<div class="con" id="div2">
+						
+					</div>
+					<div class="con" id="div3">
+						
 					</div>
 				</div>
 			</div>
-			<!-- 页面底部-备案号 #footer -->
-			<div class="col-md-12 text-center bottom">
-				Copyright © 2022 dnsc.cn All Rights Reserved 京ICP备08963888号-45 <a target="_blank" style="font-size: 12px" href="http://www.dnsc.cn/">圆心科技集团有限公司</a> 版权所有
+			<div id="partOneBox4">
+			<h2>Unity推荐</h2>
+			<div class="item">
+				<div class="item-wrapper">
+					<div class="item-content">
+						<div class="item-content-text">
+							<img src="../images/img/h3-14.jpg" >
+							<h3>your reach with NextNav</h3>
+							<p>Skip the back-and-forth and get right into your game's conversation with this top-rated dialogue system.</p>
+						</div>
+						<div class="item-content-text">
+							<img src="../images/img/h3-15.jpg" >
+							<h3>UModeler - Model your World</h3>
+							<p>Speed up your level design, and improve the quality of placed objects with this powerful editor physics system.</p>
+						</div>
+						<div class="item-content-text">
+							<img src="../images/img/h3-16.jpg" >
+							<h3>RPG Builder</h3>
+							<p>Model in the editor, including editing existing meshes with intuitive tools.rendered with advanced anti-aliasing techniques.</p>
+						</div>
+						<div class="item-content-text">
+							<img src="../images/img/h3-17.jpg" >
+							<h3>RayFire for Unity</h3>
+							<p>Shapes is a real-time vector graphics library with high-quality line drawing and infinite resolution shapes.</p>
+						</div>
+						<div class="item-content-text">
+							<img src="../images/img/h3-18.jpg" >
+							<h3>Dungeon Architect</h3>
+							<p>RayFire is a community favorite tool allowing you to infinitely demolish or slice 3D objects in runtime!</p>
+						</div>
+						<div class="item-content-text">
+							<img src="../images/img/h3-19.jpg" >
+							<h3>Dialogue System for Unity</h3>
+							<p>Create advanced RPG games without having to code. Comes with an active community for support and development.</p>
+						</div>
+						<div class="item-content-text">
+							<img src="../images/img/h3-20.jpg" >
+							<h3>Grabbit - Editor Physics Transforms</h3>
+							<p>Quickly author your own levels at runtime, right in the Editor, with this award-winning tool.</p>
+						</div>
+					</div>
+				</div>
 			</div>
-		</footer>
-		<!--页脚结束-->
+			</div>
+			<div id="partOneBox5">
+				<h2>Shop Synty</h2>
+					<div class="item">
+						<div class="item-wrapper">
+							<div class="item-content" style="height:320px">
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-1.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON Sci-Fi Space - Low Poly</div>
+									<div class="priceone2">$59.99</div>
+									<div class="pricetwo2">$119.99</div>
+								</div>
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-2.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON - Street Racer - Low Poly</div>
+									<div class="priceone2">$64.99</div>
+									<div class="pricetwo2">$129.99</div>
+								</div>
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-3.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON Particle FX - Low Poly</div>
+									<div class="priceone2">$19.99</div>
+									<div class="pricetwo2">$39.99</div>
+								</div>
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-4.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON Shops Pack - Low Poly</div>
+									<div class="priceone2">$74.99</div>
+									<div class="pricetwo2">$149.99</div>
+								</div>
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-5.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON Apocalypse - Low Poly</div>
+									<div class="priceone2">$149.99</div>
+									<div class="pricetwo2">$299.99</div>
+								</div>
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-6.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON Fantasy Kingdom - Low Poly</div>
+									<div class="priceone2">$139.99</div>
+									<div class="pricetwo2">$279.99</div>
+								</div>
+								<div class="item-content-text">
+									<div><img src="../images/img/h4-7.jpg"></div>
+									<div class="count2">-50%</div>
+									<div class="author2">Synty Studios</div>
+									<div class="name2">POLYGON Dungeon Realms - Low Poly</div>
+									<div class="priceone2">$74.99</div>
+									<div class="pricetwo2">$149.99</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<hr id="bottmbr">
+			<div id="partOneBox6">
+				<div class="low">
+					<div><img src="../images/index/low1.png"></div>
+					<div style="color: white;font-weight: 700;font-size: 18px;">高品质资源</div>
+					<div style="color: white;font-size: 14px;">11000+款5星资源</div>
+				</div>
+				<div class="low">
+					<div><img src="../images/index/low2.png"></div>
+					<div style="color: white;font-weight: 700;font-size: 18px;">深受用户信赖</div>
+					<div style="color: white;font-size: 14px;">8.5万+用户参与评分</div>
+				</div>
+				<div class="low">
+					<div><img src="../images/index/low3.png"></div>
+					<div style="color: white;font-weight: 700;font-size: 18px;">强大的社区支持</div>
+					<div style="color: white;font-size: 14px;">10万+社区成员鼎力支持</div>
+				</div>
+		</div>
+		<div id="infobottom">
+			<div id="logo">
+				<img style="margin-top: 5%;" src="../images/index/logo.svg" >
+			</div>
+			<div id="infoOne">
+				<div id="Int">
+					<ul>
+						<li style="color: white;font-weight: 700;">语言</li>
+						<br >
+						<li>English</li>
+						<li>简体中文</li>
+						<li>한국어</li>
+						<li>日本語</li>
+					</ul>
+					<ul>
+						<li style="color: white;font-weight: 700;">通过Unity出售资源</li>
+						<br>
+						<li>出售资源</li>
+						<li>资源上传指南</li>
+						<li>资源商店工具</li>
+						<li>发布商登录</li>
+						<li>常见问题</li>
+					</ul>
+					<ul>
+						<li style="color: white;font-weight: 700;">发现</li>
+						<br>
+						<li>最畅销资源</li>
+						<li>免费资源排行</li>
+						<li>付费资源排行</li>
+						<li>Asset Store资源商店博客</li>
+					</ul>
+					<ul>
+						<li style="color: white;font-weight: 700;">Affiliate计划</li>
+						<br>
+						<li>成员资格</li>
+						<li>Link Maker</li>
+						<li>Affiliate Id</li>
+					</ul>	
+					<div id="Asset">
+						<h4>关注Asset Store资源商店</h4>
+						<img src="../images/index/bottomimg.png" >
+					</div>
+				</div>
+			</div>
+			<div id="infoTwo">
+				<ul>
+					<li style="color: white;font-weight: 700;">帮助</li>
+					<br>
+					<li>常见问题</li>
+					<li>客户服务</li>
+				</ul>
+				<ul>
+					<li style="color: white;font-weight: 700;">反馈</li>
+					<br>
+					<li>提交反馈</li>
+				</ul>
+				<ul>
+					<li style="color: white;font-weight: 700;">合作伙伴计划</li>
+					<br>
+					<li>合作伙伴</li>
+				</ul>	
+				<ul>
+					<li style="color: white;font-weight: 700;">Download</li>
+					<br>
+					<li>Get Unity</li>
+					<li>Download Archive</li>
+					<li>Beta Program</li>
+				</ul>		
+				<hr style="background-color: #494A4B;border:none;height:2px;">								
+			</div>
+			<div id="infoCopy">
+				<font size="2" color="#afafaf">Copyright © 2021 &nbsp;Unity &nbsp;Technologies &nbsp;所有价格不包含税</font>
+				<font size="2" color="#c736a2"> &nbsp;服务条款和协议 &nbsp; Cookies &nbsp; Site Map &nbsp;不要出售我的个人信息</font>
+			</div>
+		</div>
+	</div>
+	</div>
 	</body>
-
+	
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			showHotList();
+		});
+	
+		function showHotList() {
+			$("#pt1").empty();
+			$("#pt2").empty();
+			$("#div1").empty();
+			$.ajax({
+				url: "/products/hot_list",
+				type: "GET",
+				dataType: "JSON",
+				success: function(json) {
+					let list = json.data;
+					console.log("count=" + list.length);
+					for (let i = 0; i < list.length; i++) {
+						if(list[i].line == 1){
+							let html =   '<div id="#{id}" class="pt">'
+										+  '<div><a href="product.html?id=#{id}"><img src="..#{image}collect.jpg"></a></div>'
+										+  '<div class="count">#{count}%</div>'
+										+  '<div class="author">#{name}</div>'
+										+  '<div class="name">#{title}</div>'
+										+  '<div class="priceone">$#{afterprice}</div>'
+										+  '<div class="pricetwo">$#{beforeprice}</div>'
+										+'</div>'
+			
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{image}/g, list[i].image);
+							html = html.replace(/#{count}/g, list[i].count);
+							html = html.replace(/#{name}/g, list[i].name);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{afterprice}/g, list[i].afterprice);
+							html = html.replace(/#{beforeprice}/g, list[i].beforeprice);
+			
+							$("#pt1").append(html);							
+						}
+						else if(list[i].line == 2){
+							let html =   '<div id="#{id}" class="pt">'
+										+  '<div><a href="product.html?id=#{id}"><img src="..#{image}collect.jpg"></a></div>'
+										+  '<div class="count">#{count}%</div>'
+										+  '<div class="author">#{name}</div>'
+										+  '<div class="name">#{title}</div>'
+										+  '<div class="priceone">$#{afterprice}</div>'
+										+  '<div class="pricetwo">$#{beforeprice}</div>'
+										+'</div>'
+										
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{image}/g, list[i].image);
+							html = html.replace(/#{count}/g, list[i].count);
+							html = html.replace(/#{name}/g, list[i].name);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{afterprice}/g, list[i].afterprice);
+							html = html.replace(/#{beforeprice}/g, list[i].beforeprice);
+										
+							$("#pt2").append(html);								
+						}
+						else if(list[i].line == 3){
+							let html =   '<div id="#{id}" class="pt2">'
+										+  '<div><a href="product.html?id=#{id}"><img src="..#{image}collect.jpg"></a></div>'
+										+  '<div class="count">#{count}%</div>'
+										+  '<div class="author">#{name}</div>'
+										+  '<div class="name">#{title}</div>'
+										+  '<div class="priceone">$#{afterprice}</div>'
+										+  '<div class="pricetwo">$#{beforeprice}</div>'
+										+'</div>'
+										
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{image}/g, list[i].image);
+							html = html.replace(/#{count}/g, list[i].count);
+							html = html.replace(/#{name}/g, list[i].name);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{afterprice}/g, list[i].afterprice);
+							html = html.replace(/#{beforeprice}/g, list[i].beforeprice);
+										
+							$("#div1").append(html);								
+						}
+						else if(list[i].line == 4){
+							let html =   '<div id="#{id}" class="pt2">'
+										+  '<div><a href="product.html?id=#{id}"><img src="..#{image}collect.jpg"></a></div>'
+										+  '<div class="count">#{count}%</div>'
+										+  '<div class="author">#{name}</div>'
+										+  '<div class="name">#{title}</div>'
+										+  '<div class="priceone">$#{afterprice}</div>'
+										+  '<div class="pricetwo">$#{beforeprice}</div>'
+										+'</div>'
+										
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{image}/g, list[i].image);
+							html = html.replace(/#{count}/g, list[i].count);
+							html = html.replace(/#{name}/g, list[i].name);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{afterprice}/g, list[i].afterprice);
+							html = html.replace(/#{beforeprice}/g, list[i].beforeprice);
+										
+							$("#div2").append(html);								
+						}
+						else if(list[i].line == 5){
+							let html =   '<div id="#{id}" class="pt2">'
+										+  '<div><a href="product.html?id=#{id}"><img src="..#{image}collect.jpg"></a></div>'
+										+  '<div class="count">#{count}%</div>'
+										+  '<div class="author">#{name}</div>'
+										+  '<div class="name">#{title}</div>'
+										+  '<div class="priceone">$#{afterprice}</div>'
+										+  '<div class="pricetwo">$#{beforeprice}</div>'
+										+'</div>'
+										
+							html = html.replace(/#{id}/g, list[i].id);
+							html = html.replace(/#{image}/g, list[i].image);
+							html = html.replace(/#{count}/g, list[i].count);
+							html = html.replace(/#{name}/g, list[i].name);
+							html = html.replace(/#{title}/g, list[i].title);
+							html = html.replace(/#{afterprice}/g, list[i].afterprice);
+							html = html.replace(/#{beforeprice}/g, list[i].beforeprice);
+										
+							$("#div3").append(html);								
+						}
+					}
+				}
+			});
+		};
+	
+		$(function(){
+			$(".navBox3 li").click(function(){
+				$(".navBox3 li").css({"border-bottom-style":"none"});
+				$(this).css({"border-bottom-style":"solid"});
+				$(".navBox3 li").css({"color":"#b8b8b8"});
+				$(this).css({"color":"#d038a9"});
+				var msg = $(this).attr("title");
+				$(".con").css({"display":"none"});
+				$(msg).css({"display":"block"});
+			})
+		});
+	</script>
 </html>

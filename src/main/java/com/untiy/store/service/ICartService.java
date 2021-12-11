@@ -28,4 +28,8 @@ public interface ICartService {
      * @return 匹配的购物车数据详情的列表
      */
     List<CartVO> getVOByCids(Integer uid, Integer[] cids);
+
+    void deleteByCid(Integer cid);
+
+    void deleteByCids(Integer [] cid);
 }
